@@ -1,32 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Meta Information -->
-    <title>Tweeter - Home Page</title>
 
-    <!-- External CSS -->
-    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+<head>
+  <!-- Meta Information -->
+  <title>Tweeter - Home Page</title>
 
-    <!-- App CSS -->
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <!-- External CSS -->
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
 
-    <!-- External JS -->
-    <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
+  <!-- External font Bungee and Source Sans Pro 300 and 700 italics-->
+  <link href="https://fonts.googleapis.com/css?family=Bungee|Source+Sans+Pro:300i,700i&display=swap" rel="stylesheet">
 
-    <!-- App JS -->
-    <script type="text/javascript" src="/scripts/app.js"></script>
-  </head>
+  <!-- App CSS -->
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
 
-  <body>
+  <!--Nav CSS-->
+  <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
 
-    <!-- Top nav bar (fixed) -->
-    <nav>
-      <span>tweeter</span>
-    </nav>
+  <!--Header CSS-->
+  <link rel="stylesheet" href="/styles/header.css" type="text/css" />
 
-    <!-- Page-specific (main) content here -->
-    <main class="container">
-    </main>
+  <!--New Tweet CSS-->
+  <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
 
-  </body>
+  <!--New Tweet CSS-->
+  <link rel="stylesheet" href="/styles/container.css" type="text/css" />
+
+  <!-- External JS -->
+  <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
+
+  <!-- App JS -->
+  <script type="text/javascript" src="/scripts/app.js"></script>
+</head>
+
+<body>
+
+  <!-- Top nav bar (fixed) -->
+  <nav>
+    <span class="tweeter">tweeter</span>
+    <span class="write-tweet">Write a new tweet</span>
+  </nav>
+
+  <header class="display">
+    <div class="center">
+      <img src="/images/profile-hex.png">
+    </div>
+    <div class="center">
+      <h2 class="center username">Andrew Duong</h2>
+    </div>
+  </header>
+  <!-- Page-specific (main) content here -->
+  <main class="container">
+    <section>
+      <h2 class="center">Compose Tweet</h2>
+      <form>
+        <textarea class="tweet-area border-bottom" name="text" placeholder="What are you humming about?"></textarea>
+        <!-- <span class="margin-button-counter"> -->
+        <input class="tweet-button" type="submit" value="Tweet">
+        <span class="counter">140</span>
+        <!-- </span> -->
+      </form>
+    </section>
+    <section>
+      <article class="tweet-container">
+        <header>
+          <span class="username"><img src="/images/profile-hex.png" style="height:10%; width:10%">Andrew Duong</span>
+          <span class="at-handle">@Duong</span>
+        </header>
+        <div class="tweet bottom-border">
+          Wow, this App is amazing!!
+        </div>
+        <footer>
+          <span class="date">10 days ago</span>
+          <span class="symbols">Hello</span>
+        </footer>
+      </article>
+    </section>
+  </main>
+
+</body>
+<script src="./scripts/composer-char-counter.js">
+</script>
+
 </html>

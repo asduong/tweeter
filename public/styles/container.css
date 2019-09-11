@@ -1,0 +1,25 @@
+.tweet-container {
+  display: flex;
+  flex-direction: row;
+  border: 4px grey solid;
+  margin: 3% 0 0 0;
+}
+
+.username {}
+
+.at-handle {
+  justify-content: flex-end;
+}
+
+.tweet {
+  display: flex;
+  align-items: center;
+}
+
+.date {
+  display: flex;
+}
+
+.symbol {
+  display: flex;
+}
