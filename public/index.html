@@ -53,7 +53,7 @@
   <main class="container">
     <section>
       <h2 class="center">Compose Tweet</h2>
-      <form>
+      <form id="new-tweet" method="POST" action="/tweets">
         <textarea class="tweet-area border-bottom" name="text" placeholder="What are you humming about?"></textarea>
         <!-- <span class="margin-button-counter"> -->
         <input class="tweet-button" type="submit" value="Tweet">
@@ -61,20 +61,8 @@
         <!-- </span> -->
       </form>
     </section>
-    <section>
-      <article class="tweet-container">
-        <header>
-          <span class="username"><img src="/images/profile-hex.png" style="height:10%; width:10%">Andrew Duong</span>
-          <span class="at-handle">@Duong</span>
-        </header>
-        <div class="tweet bottom-border">
-          Wow, this App is amazing!!
-        </div>
-        <footer>
-          <span class="date">10 days ago</span>
-          <span class="symbols">Hello</span>
-        </footer>
-      </article>
+    <section id="tweets-container">
+
     </section>
   </main>
 

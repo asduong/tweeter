@@ -1,25 +1,46 @@
-.tweet-container {
-  display: flex;
-  flex-direction: row;
-  border: 4px grey solid;
-  margin: 3% 0 0 0;
+#tweets-container {}
+
+.main-container {
+  border: 4px solid grey;
+  margin: 2% 0 0 0;
 }
 
-.username {}
+.main-container:hover {
+  font-weight: bold;
+  box-shadow: 5px 5px blue;
+
+}
+
+.main-container:hover .at-handle {
+  display: block;
+}
+
+.resize {
+  height: 80px;
+  width: 80px;
+}
+
 
 .at-handle {
-  justify-content: flex-end;
+  display: none;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
 }
 
 .tweet {
   display: flex;
-  align-items: center;
 }
 
-.date {
-  display: flex;
+.border-bottom {
+  border-bottom: 4px solid grey;
+  width: 98%;
+  margin: auto;
 }
 
-.symbol {
+.footer-container {
   display: flex;
+  justify-content: space-between;
 }

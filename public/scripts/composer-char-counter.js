@@ -8,17 +8,3 @@ $(document).ready(function () {
     }
   });
 });
-
-// $(".tweet-area").keyup(counter);
-// $(".tweet-area").keydown(counter);
-// function counter() {
-//   let textCounter = 140;
-//   if (textCounter < 0) {
-//     $(".counter")
-//   }
-// }
-
-// $(".tweet-area").on("keydown", function () {
-//   let val = $(".counter").val();
-//   console.log(val);
-// });
