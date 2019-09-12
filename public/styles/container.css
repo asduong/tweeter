@@ -7,12 +7,12 @@
 
 .main-container:hover {
   font-weight: bold;
-  box-shadow: 5px 5px blue;
-
+  box-shadow: 5px 5px lightslategrey;
 }
 
 .main-container:hover .at-handle {
   display: block;
+  opacity: 0.3;
 }
 
 .resize {
@@ -32,6 +32,7 @@
 
 .tweet {
   display: flex;
+  flex-flow: row wrap;
 }
 
 .border-bottom {
@@ -43,4 +44,5 @@
 .footer-container {
   display: flex;
   justify-content: space-between;
+  margin: 2% 0 0 0;
 }
