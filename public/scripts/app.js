@@ -11,7 +11,7 @@ const createTweetElement = (tweetData) => {
           <span class="at-handle">${tweetData.user.handle}</span>
         </header>
         <div class="tweet border-bottom">
-          ${tweetData.content.text}
+          ${escape(tweetData.content.text)}
         </div>
         <footer class="footer-container">
           <span class="date">${tweetData.created_at}</span>
@@ -39,6 +39,22 @@ const loadtweets = () => {
   });
 };
 
+const newTweet = () => {
+  $.ajax({
+    url: `/tweets`,
+    method: 'GET',
+    dataType: 'JSON'
+  }).then(function (data) {
+    $("#tweets-container").prepend(createTweetElement(data[data.length - 1]));
+  });
+};
+
+const escape = function (str) {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
 $(document).ready(() => {
   $("#new-tweet").on('submit', (event) => {
     event.preventDefault();
@@ -52,11 +68,11 @@ $(document).ready(() => {
         url: `/tweets`,
         method: 'POST',
         data: input,
-        success: loadtweets()
+        success: function () {
+          newTweet();
+        }
       });
     }
   });
-
   loadtweets();
-
 });
