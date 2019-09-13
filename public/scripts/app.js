@@ -4,6 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+// Create Tweets Dynamically
 const createTweetElement = (tweetData) => {
   const $tweet = `<article class="main-container">
         <header class="header-container">
@@ -24,12 +25,14 @@ const createTweetElement = (tweetData) => {
   return $tweet;
 };
 
+// Using createTweetElement function to render each tweet passed in
 const renderTweets = (tweets) => {
   for (const tweet of tweets) {
     $("#tweets-container").prepend(createTweetElement(tweet));
   }
 };
 
+// Rendering all of the tweets using AJAX Get
 const loadtweets = () => {
   $.ajax({
     url: `/tweets`,
@@ -39,6 +42,7 @@ const loadtweets = () => {
   });
 };
 
+// Rendering all of the new tweets using AJAX Get
 const newTweet = () => {
   $.ajax({
     url: `/tweets`,
@@ -49,6 +53,7 @@ const newTweet = () => {
   });
 };
 
+// Escaping html tags to avoid XSS
 const escape = function (str) {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
@@ -62,9 +67,9 @@ $(document).ready(() => {
     event.preventDefault();
     const input = $("#new-tweet").serialize();
     if (input.length > 145) {
-      $(".error-text").slideDown().text("Too many characters");
+      $(".error-text").slideDown().text("Maximum of 140 characters, please delete the extra characters.");
     } else if (input.length === 5 || input === null) {
-      $(".error-text").slideDown().text("Cannot be empty");
+      $(".error-text").slideDown().text("This cannot be empty, please add some content in your Tweet.");
     } else {
       $(".error-text").slideUp();
       $.ajax({
@@ -73,14 +78,15 @@ $(document).ready(() => {
         data: input,
         success: function () {
           newTweet();
+          $(".tweet-area").val("");
         }
       });
     }
   });
+
+  // Arrow in Navbar to toggle the area where user writes their tweets
   $(".arrow").click(function () {
-    $(".tweet-area").slideToggle("slow", function () {
-      console.log("Works!");
-    });
+    $("#new-tweet").slideToggle("slow", function () {});
   });
   loadtweets();
 });
