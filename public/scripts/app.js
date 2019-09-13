@@ -55,15 +55,18 @@ const escape = function (str) {
   return div.innerHTML;
 };
 
+
+
 $(document).ready(() => {
   $("#new-tweet").on('submit', (event) => {
     event.preventDefault();
     const input = $("#new-tweet").serialize();
     if (input.length > 145) {
-      return alert("Too many characters");
+      $(".error-text").slideDown().text("Too many characters");
     } else if (input.length === 5 || input === null) {
-      return alert("Cannot be empty");
+      $(".error-text").slideDown().text("Cannot be empty");
     } else {
+      $(".error-text").slideUp();
       $.ajax({
         url: `/tweets`,
         method: 'POST',
@@ -73,6 +76,11 @@ $(document).ready(() => {
         }
       });
     }
+  });
+  $(".arrow").click(function () {
+    $(".tweet-area").slideToggle("slow", function () {
+      console.log("Works!");
+    });
   });
   loadtweets();
 });

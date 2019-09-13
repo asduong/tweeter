@@ -1,19 +1,12 @@
-/* Used to centre text like h2 */
-.center {
-  display: flex;
-  justify-content: center;
-}
-
 /* The textarea where users write their tweets */
 .tweet-area {
   background-color: #f4f1ec;
   border: 0px;
   font-weight: bold;
-  width: 100%;
+  margin-top: 3%;
   background: none;
   resize: none;
   outline: none;
-  /* font-family: "Source-Sans-Pro", "sans-serif" */
 }
 
 /* Border bottom for the tweets */

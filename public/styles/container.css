@@ -15,6 +15,14 @@
   opacity: 0.3;
 }
 
+.error-text {
+  border: 4px solid red;
+  color: red;
+  width: 100%;
+  display: none;
+  margin: 3% 0;
+}
+
 .resize {
   height: 80px;
   width: 80px;
@@ -33,6 +41,7 @@
 .tweet {
   display: flex;
   flex-flow: row wrap;
+  margin-bottom: 2%;
 }
 
 .border-bottom {
@@ -45,4 +54,8 @@
   display: flex;
   justify-content: space-between;
   margin: 2% 0 0 0;
+}
+
+.symbols {
+  color: #4056A1;
 }

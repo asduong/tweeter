@@ -1,26 +1,56 @@
-nav {
+.nav-container {
   color: #FFFFFF;
   height: 120px;
   z-index: auto;
   background-color: #4056A1;
   display: flex;
-}
-
-nav .tweeter {
-  font-family: 'Bungee', 'sans-serif';
-  display: flex;
-  align-items: flex-end;
-  padding: 1.5em;
-}
-
-nav .write-tweet {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
   width: 100%;
-  padding: 1.5em;
+  position: fixed;
 }
+
+.tweeter {
+  font-family: 'Bungee', 'sans-serif';
+  padding: 1em;
+  font-size: 35px;
+}
+
+.write-tweet {
+  display: flex;
+  margin: 1em 1em 0 1em;
+}
+
 
 .arrow {
+  display: flex;
+  justify-content: center;
+}
+
+.arrow-color {
   color: red;
 }
+
+.bounce {
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(-30px);
+  }
+
+  60% {
+    transform: translateY(-15px);
+  }
+}
+
+/* .arrow :hover {} */

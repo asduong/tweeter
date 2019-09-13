@@ -40,11 +40,13 @@
 <body>
 
   <!-- Top nav bar (fixed) -->
-  <nav>
+  <nav class="nav-container">
     <span class="tweeter">tweeter</span>
-    <span class="write-tweet">Write a new tweet</span>
-    <span class="arrow" href="#tweets-container"><i class="fa fa-angle-double-down" aria-hidden="true"></i></span>
-
+    <div class="nav-container2">
+      <span class="write-tweet">Write a new tweet</span>
+      <span class="arrow"><a href="#tweets-container"><i class="fa fa-angle-double-down bounce arrow-color"
+            aria-hidden="true"></i></a></span>
+    </div>
   </nav>
 
   <header class="display">
@@ -58,7 +60,7 @@
   <!-- Page-specific (main) content here -->
   <main class="container">
     <section>
-      <h2 class="center">Compose Tweet</h2>
+      <span class="error-text"></span>
       <form id="new-tweet" method="POST" action="/tweets">
         <textarea class="tweet-area border-bottom" name="text" placeholder="What are you humming about?"></textarea>
         <!-- <span class="margin-button-counter"> -->
